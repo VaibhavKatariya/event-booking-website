@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #e63946;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-menu li {
+    margin-left: 1rem;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero {
+    background-color: #1d3557;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tickets {
+    padding: 3rem 0;
+}
+
+.tickets h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1d3557;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-table th {
+    background-color: #f1faee;
+    font-weight: 700;
+}
+
+.status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.attended {
+    background-color: #a8dadc;
+    color: #1d3557;
+}
+
+.not-attended {
+    background-color: #e63946;
+    color: #fff;
+}
+
+.pending {
+    background-color: #ffd166;
+    color: #1d3557;
+}
+
+.no-tickets {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.no-tickets a {
+    color: #e63946;
+    text-decoration: none;
+}
+
+.no-tickets a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #1d3557;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.HeaderTitle {
+    text-decoration: none;
+    color: white;
+}
