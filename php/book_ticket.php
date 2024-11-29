@@ -8,7 +8,7 @@ $event_id = $_GET['event_id'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Process the form submission
-    $username = trim($_POST['email'] ?? '');
+    $username = trim($_POST['username'] ?? '');
     $event_id = trim($_POST['event_id'] ?? '');
 
     // Validate inputs
@@ -35,21 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_ticket->bind_param("iis", $user_id, $event_id, $ticket_code);
 
             if ($stmt_ticket->execute()) {
-                // Send confirmation email
-                $subject = "Your Ticket Confirmation";
-                $message_body = "Hello $username,\n\nYour ticket has been successfully booked!\n\nEvent ID: $event_id\nTicket Code: $ticket_code\n\nThank you for choosing ConfiConcert!";
-                $headers = "From: no-reply@ConfiConcert.com";
-
-                // Send confirmation email
-                if (mail($username, $subject, $message_body, $headers)) {
-                    $message = "Ticket booked successfully! A confirmation email has been sent.";
-
-                    // Delay for 5 seconds before redirecting
-                    header("Refresh: 5; url=/new/index.php"); // Adjust the path to your home page
-                    exit;
-                } else {
-                    $message = "Ticket booked, but the confirmation email could not be sent.";
-                }
+                // Success message with dashboard link
+                $message = "Ticket booked successfully! <a href='../user/user_dash.php'>Go to your dashboard</a>";
             } else {
                 $message = "Error booking ticket: " . $stmt_ticket->error;
             }
@@ -81,7 +68,7 @@ $conn->close();
             <h1>Book Your Ticket</h1>
             <?php if (!empty($message)): ?>
                 <div class="<?= strpos($message, 'successfully') !== false ? 'success-message' : 'error-message' ?>">
-                    <?= htmlspecialchars($message) ?>
+                    <?= $message ?>
                 </div>
             <?php endif; ?>
             <input type="hidden" name="event_id" value="<?= htmlspecialchars($event_id) ?>">
@@ -100,4 +87,3 @@ $conn->close();
     </div>
 </body>
 </html>
-

@@ -15,10 +15,7 @@
             <div class="logo">ConfiConcert</div>
             <nav class="navbar">
                 <ul class="navbar-menu">
-                    <!-- <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li> -->
                     <li><a href="admin/dashboard.php">Admin Dashboard</a></li>
                     <li><a href="register.php" class="btn">Register</a></li>
                     <li><a href="user/login.php" class="btn">Login</a></li>
